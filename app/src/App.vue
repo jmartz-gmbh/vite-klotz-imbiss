@@ -19,6 +19,7 @@ import footer from "@/components/footer.vue";
 import messages from "@/components/messages.vue";
 import breadcrumb from "@/components/breadcrumb.vue";
 import { useMessagesStore } from "@/stores/messages.js";
+import { useBreadcrumbStore } from "@/stores/breadcrumb.js";
 import "./tailwind.css";
 
 export default {
@@ -38,7 +39,9 @@ export default {
   },
   watch: {
     $route: function () {
+      let store = useBreadcrumbStore();
       window.scrollTo({ top: 0, behavior: "smooth" });
+      store.reset();
     },
   },
 };

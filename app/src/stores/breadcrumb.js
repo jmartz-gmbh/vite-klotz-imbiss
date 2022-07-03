@@ -1,14 +1,22 @@
 import { defineStore } from "pinia";
 
-export const useBreadcrumb = defineStore("breadcrumb", {
+export const useBreadcrumbStore = defineStore("breadcrumb", {
   state() {
     return {
       items: [],
     };
   },
   actions: {
-    add: function (state) {
-      this.items.push(state);
+    add: function (data) {
+      this.items.push(data);
+    },
+    reset: function () {
+      this.items = [
+        {
+          link: "/",
+          label: "Home",
+        },
+      ];
     },
   },
 });

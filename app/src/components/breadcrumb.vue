@@ -13,9 +13,9 @@
   </div>
 </template>
 <script setup>
-import { useBreadcrumb } from "../stores/breadcrumb";
+import { useBreadcrumbStore } from "../stores/breadcrumb";
 import { ref } from "vue";
-let store = useBreadcrumb();
+let store = useBreadcrumbStore();
 
 let items = ref(store.items);
 store.add({
