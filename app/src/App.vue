@@ -34,7 +34,7 @@ export default {
     let store = useMessagesStore();
     store.add({
       typ: "info",
-      message: "Hallo Welt",
+      message: "Dies ist nicht die offizielle Webseit der vom Imbiss Klotz.",
     });
   },
   watch: {

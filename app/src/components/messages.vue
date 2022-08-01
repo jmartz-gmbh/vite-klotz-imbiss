@@ -1,7 +1,10 @@
 <template>
-  <div class="mx-auto max-w-5xl px-2 py-2 bg-white">
+  <div class="mx-auto max-w-5xl">
     <ul>
-      <li v-for="(message, index) in messages" class="flex">
+      <li v-for="(message, index) in messages" :class="{
+        'flex px-2 py-2': true,
+        'bg-red-600 text-white': message.typ == 'info'
+      }">
         <div class="icon mr-2">
           <fa v-if="message.typ == 'info'" icon="info" />
         </div>
